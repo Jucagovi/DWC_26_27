@@ -2,7 +2,7 @@
 
 Este repositorio contiene los contenidos, prácticas, proyectos y código fuente desarrollados para el módulo profesional de **Desarrollo Web en Entorno Cliente (DWC)**, siguiendo el currículo oficial de la Conselleria de Educación de la Generalitat Valenciana (GVA).
 
-### Objetivos del Módulo
+### Objetivos del módulo
 
 El objetivo principal es aprender a desarrollar la interfaz de usuario de aplicaciones web asegurando la accesibilidad, usabilidad y rendimiento.
 
@@ -12,7 +12,7 @@ El objetivo principal es aprender a desarrollar la interfaz de usuario de aplica
 * Consumir datos de servicios web (APIs REST).
 * Utilizar frameworks y librerías modernas.
 
-### Estructura del Contenido
+### Estructura del contenido
 
 El código se organiza por unidades didácticas y su [contenido se puede encontrar aquí](https://iespacomolla.github.io/DesarrolloWebCliente/):
 
@@ -24,7 +24,7 @@ El código se organiza por unidades didácticas y su [contenido se puede encontr
 * **UT06. Programación asíncrona y bibliotecas**: AJAX, Promesas, Fetch API y consumo de serviciosa través de Supabase.
 * **UT07. Clases en JavaScript**: Repaso a las clases en JavaScript.
 
-### Tecnologías Utilizadas
+### Tecnologías utilizadas
 
 * HTML5 / CSS3
 * JavaScript (ES6+)
@@ -32,14 +32,14 @@ El código se organiza por unidades didácticas y su [contenido se puede encontr
 * Node.js y npm
 * Git / GitHub
 
-### Requisitos Previos
+### Requisitos previos
 
 Para ejecutar el código de este repositorio necesitarás:
 
 1. Un navegador web moderno (Mozilla Firefox, Google Chrome, Brave, etc.).
 2. Un editor de código (se recomienda [Visual Studio Code](https://visualstudio.com)).
 
-### Instalación y Uso
+### Instalación y uso
 
 1. Clona este repositorio en tu máquina local:
 
