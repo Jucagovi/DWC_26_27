@@ -38,8 +38,8 @@ nuevaEdad = edad + incremento;
 // Este es el modo "java" de mostrar cadenas (evitar).
 console.log(nombre + " tras " + incremento + " años tendrá " + nuevaEdad);
 // Mejor se usa *template literals*.
-console.log(`${nombre} tras ${incremento} años tendrá ${nuevaEdad}`); */
-
+console.log(`${nombre} tras ${incremento} años tendrá ${nuevaEdad}`);
+ */
 /******* FUNCIONES *******/
 
 /*** Declaración de funciones declaración */
@@ -49,7 +49,7 @@ function doblar(num1) {
   return `El resultado es ${res}`;
 }
 
-/* console.log(doblar(151)); */
+console.log(doblar(151));
 
 /*** Parámetros predeterminados */
 
@@ -57,7 +57,8 @@ function saludar(persona = "Amigo") {
   return `¡Hola ${persona}!`;
 }
 
-/* console.log(saludar()); */
+console.log(saludar());
+console.log(saludar("Feo"));
 
 /*** Funciones como parámetro */
 
@@ -65,7 +66,8 @@ function alpha(num, fun) {
   return fun(num);
 }
 
-/* console.log(alpha(50, doblar)); */
+console.log(alpha(50, doblar));
+console.log(alpha("Feo", doblar));
 
 /*** Hoisting en funciones */
 
@@ -77,9 +79,9 @@ const feo = function (num1, num2) {
   return num1 + num2;
 };
 
-/* console.log(typeof feo);
+console.log(typeof feo);
 console.log(feo);
-console.log(feo(5, 5)); */
+console.log(feo(5, 5));
 
 //Se usan en la definición de métodos de los objetos.
 
@@ -101,13 +103,13 @@ const potencia = (num) => {
 
 function sumarB() {
   let total = 0;
-  let arrayFeo = [4, 5, 4, 7];
   for (let i = 0; i < arguments.length; i++) {
     total += arguments[i];
   }
-  /* console.log(arrayFeo);
+  /*   let arrayFeo = [4, 5, 4, 7];
+  console.log(arrayFeo);
   console.log(arguments); */
   return total;
 }
 
-/* console.log(sumarB(4, 5, 4, 7, 12, 13, 34, 56)); */
+console.log(sumarB(4, 5, 4, 7, 12, 13, 34, 56, 7, 12, 13, 34, 56));
