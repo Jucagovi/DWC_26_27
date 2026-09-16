@@ -10,7 +10,7 @@ import { sumar as add } from "./bibliotecas/calculadora.js";
 // Importa todos los elementos en un objeto.
 import * as Feo from "./bibliotecas/calculadora.js";
 
-/* console.log(sumar(5, 5)); */
+console.log(sumar(5, 5));
 /* console.log(add(5, 5)); */
 /* console.log(Feo.restar(5, 5)); */
 /* console.log(Feo.dividir(85, 0)); */

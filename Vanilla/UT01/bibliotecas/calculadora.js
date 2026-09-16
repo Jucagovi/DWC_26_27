@@ -18,7 +18,7 @@ function multiplicar(x, y) {
  * Exporta directamente la función Dividir.
  * */
 
-export function dividir(x, y) {
+function dividir(x, y) {
   return y === 0 ? "No se puede dividir entre cero." : x / y;
 }
 
@@ -26,10 +26,4 @@ export function dividir(x, y) {
  *   Exporta los elementos situados entre las llaves.
  * */
 
-export { sumar, restar, multiplicar };
-
-/**
- * Exporta el elemento con un seudónimo.
- * */
-
-export { multiplicar as multi };
+export { sumar, restar, multiplicar, dividir, multiplicar as multi };
