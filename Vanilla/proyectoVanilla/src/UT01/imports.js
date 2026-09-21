@@ -10,7 +10,7 @@ import { sumar as add } from "./bibliotecas/calculadora.js";
 // Importa todos los elementos en un objeto.
 import * as Feo from "./bibliotecas/calculadora.js";
 
-console.log(sumar(5, 5));
+//console.log(sumar(5, 5));
 /* console.log(add(5, 5)); */
 /* console.log(Feo.restar(5, 5)); */
 /* console.log(Feo.dividir(85, 0)); */
@@ -31,4 +31,17 @@ console.log(sumar(5, 5));
 
 let res = isNaN(2);
 
-console.log(res);
+//console.log(res);
+
+function sumarMucho() {
+  console.log(arguments);
+  console.log(arguments.length);
+  let total=0;
+  for (let i=0; i < arguments.length; i++){
+    console.log(arguments[i]);
+    total += arguments[i];
+  }
+  console.log(total);
+}
+
+sumarMucho(5, 6, 7, 9, 7);

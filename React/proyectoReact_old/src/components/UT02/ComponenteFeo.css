@@ -1,0 +1,11 @@
+.titulo {
+    font-size: 200%;
+    font-weight: bold;
+    color: rgb(253, 4, 4);
+}
+
+p {
+    text-align: left;
+    margin: 5px 0px;
+    color: black;
+}

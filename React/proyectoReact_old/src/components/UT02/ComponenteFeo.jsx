@@ -1,10 +1,10 @@
 import React from "react";
 // Añadir media.
-import "./ComponenteFeo.css";
+// Añadir CSS.
 import logotipo from "../../assets/react.svg";
 
-const ComponenteFeo = (props) => {
-  const feo = "Muy Feo";
+function ComponenteFeo(props) {
+  //const PrimerComponente = (props) => {
   // Código JavaScript Vanilla.
   return (
     // Código JSX que aparecerá en el DOM.
@@ -12,10 +12,7 @@ const ComponenteFeo = (props) => {
     <>
       <h1>¡Hola,feo!</h1>
       <img src={logotipo} />
-      <p>{feo}</p>
-      <p className='MiComponenteFeo-titulo'>
-        El ingenioso hidalgo Don Quijote de la Mancha.
-      </p>
+      <p className='titulo'>El ingenioso hidalgo Don Quijote de la Mancha.</p>
       <p>
         En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha
         mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga
@@ -33,6 +30,6 @@ const ComponenteFeo = (props) => {
       </p>
     </>
   );
-};
+}
 
 export default ComponenteFeo;
