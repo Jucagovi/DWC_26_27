@@ -101,12 +101,14 @@ var bichos = ["Shakra", "Sherma", "Mooshka", "Huntress", "Hornet"];
 
 let mezcladillo = [1, "dos", 3, "cuatro", 5, "seis"];
 
-/* console.log(
-  mezcladillo.filter((v, i, a) => {
-    console.log(`En la posición ${i} está ${v}.`);
-    console.log(a);
-  }),
-); // ["dos", "cuatro", "seis"] */
+/* const soloTexto = mezcladillo.filter((v, i, a) => {
+  console.log(`En la posición ${i} está ${v}.`);
+  console.log(a);
+  return typeof v === "string";
+}); */
+
+/* console.log(soloTexto); // ["dos", "cuatro", "seis"]
+console.log(mezcladillo);  */
 
 let numeros = [1, 3, 5, 7, 9];
 let suma = numeros.reduce((acumulador, valor, indice, array) => {
@@ -172,27 +174,23 @@ const feos2 = feos.map((feo) => {
 const nuevoFeo = "Juan Carlos";
 const feos3 = [...feos, nuevoFeo];
 
-//console.log(feos3);
+console.log(feos3);
 
 // -> Eliminar un elemento del objeto (filter).
 const feos4 = feos3.filter((feo) => {
   return feo !== nuevoFeo;
 });
 
-//console.log(feos4);
+console.log(feos4);
 
 // -> Actualizar un elemento del objeto.
 const nuevoValor = "Arturo";
 const valorCambiar = "Artura";
 const feos5 = feos.map((feo) => {
-  if (feo === valorCambiar) {
-    return nuevoValor;
-  } else {
-    return feo;
-  }
+  return feo === valorCambiar ? nuevoValor : feo;
 });
 
-//console.log(feos5);
+console.log(feos5);
 
 /***
  *  arguments vs parámetros rest (con spread)
@@ -200,15 +198,17 @@ const feos5 = feos.map((feo) => {
 
 // Nueva forma de trabajar con un número indefinido de parámetros.
 
-const sumarBien = (...numeros) => {
+const sumarBien = (texto, ...numeros) => {
   //console.log(arguments); // Es un pseudo-array.
   console.log(numeros); // Es un objeto array.
-  return numeros.reduce((acumulador, valor, indice, array) => {
+  console.log(texto); // Es un texto.
+  const resultado = numeros.reduce((acumulador, valor, indice, array) => {
     return acumulador + valor;
   });
+  return `${texto}: ${resultado}`;
 };
 
-/* console.log(sumarBien(3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3)); */
+console.log(sumarBien("El resultat és", 3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3));
 
 let numero = 45.6;
 /* console.log(numero);
