@@ -136,8 +136,11 @@ console.log(feosForeach); */
  * OPERADOR SPREAD (desparramar)
  ************************************************************************************************/
 
-/*** Shallow copy (copia superficial sólo comparten la referencia). */
-/*** Con Spread se realiza una copia profunda (Deep copy) y se copia el contenido del objeto. */
+/**
+* Spread realiza una copia superficial (Shallow copy). Si el array u objeto contiene otros objetos anidados,
+* estos no se copian por valor, sino que mantienen la referencia en memoria.
+*/
+
 
 const copia = [...numeros];
 
