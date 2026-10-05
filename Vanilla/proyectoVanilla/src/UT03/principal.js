@@ -139,10 +139,9 @@ console.log(feosForeach); */
  ************************************************************************************************/
 
 /**
-* Spread realiza una copia superficial (Shallow copy). Si el array u objeto contiene otros objetos anidados,
-* estos no se copian por valor, sino que mantienen la referencia en memoria.
-*/
-
+ * Spread realiza una copia superficial (Shallow copy). Si el array u objeto contiene otros objetos anidados,
+ * estos no se copian por valor, sino que mantienen la referencia en memoria.
+ */
 
 const copia = [...numeros];
 
@@ -174,14 +173,14 @@ const feos2 = feos.map((feo) => {
 const nuevoFeo = "Juan Carlos";
 const feos3 = [...feos, nuevoFeo];
 
-console.log(feos3);
+/* console.log(feos3); */
 
 // -> Eliminar un elemento del objeto (filter).
 const feos4 = feos3.filter((feo) => {
   return feo !== nuevoFeo;
 });
 
-console.log(feos4);
+/* console.log(feos4); */
 
 // -> Actualizar un elemento del objeto.
 const nuevoValor = "Arturo";
@@ -190,7 +189,7 @@ const feos5 = feos.map((feo) => {
   return feo === valorCambiar ? nuevoValor : feo;
 });
 
-console.log(feos5);
+/* console.log(feos5); */
 
 /***
  *  arguments vs parámetros rest (con spread)
@@ -208,7 +207,7 @@ const sumarBien = (texto, ...numeros) => {
   return `${texto}: ${resultado}`;
 };
 
-console.log(sumarBien("El resultat és", 3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3));
+/* console.log(sumarBien("El resultat és", 3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3)); */
 
 let numero = 45.6;
 /* console.log(numero);
@@ -271,3 +270,145 @@ let a = 5;
     clearInterval(idIntervalo);
   }
 }, 5000); */
+
+/************************************************************************************************
+ * Objeto JSON (JavaScript Object Notation)
+ ***********************************************************************************************/
+
+/*** Definición de objetos (propiedades)*/
+let nadie = {};
+let persona = {
+  nombre: "Feo",
+  apellido1: "De Verdad",
+  direccion: {
+    // Puede haber JSON anidados.
+    calle: "La de siempre",
+    numero: 5,
+    telefono: 123456789,
+  },
+  aficiones: ["Videojuegos", "Rugby"],
+}; // Todo objeto JSON finaliza con un punto y coma ( ; ).
+
+/* console.log(nadie);
+console.log(persona); */
+
+/***
+ *  Acceso a las propiedades
+ * */
+
+/* console.log(persona.nombre);
+console.log(persona["apellido1"]);
+console.log(
+  `Que vive en ${persona.direccion.calle} número ${persona["direccion"].numero}.`
+);
+console.log(persona.aficiones);
+
+persona.apellido2 = "De la buena";
+console.log(persona); */
+
+/***
+ *  Definición de objetos ("métodos")
+ * */
+
+/* persona.getNombreCompleto = function () {
+  // Necesito una función anónima para usar this (no vale una función flecha).
+  return `${this.nombre} ${this.apellido1}`;
+}; */
+
+/* console.log(persona);
+console.log(persona.getNombreCompleto); // Imprimo por consola el objeto función.
+console.log(persona.getNombreCompleto()); // Ejecuto la función e imprimo lo que devuelve. */
+
+/***
+ * Las funciones pueden devolver objetos JSON.
+ */
+
+/* const creaPersona = (nom, ape1) => {
+  return {
+    nombre: nom,
+    apellido1: ape1,
+    direccion: {
+      calle: "La de siempre",
+      numero: 5,
+      telefono: 123456789,
+    },
+    aficiones: ["Videojuegos"],
+    getNombreCompleto: function () {
+      return this.nombre + " " + this.apellido1;
+    },
+    saluda: function (persona) {
+      if (typeof persona.getNombreCompleto !== "undefined") {
+        return "Hola " + persona.getNombreCompleto();
+      } else {
+        return "Hola colega";
+      }
+    },
+  };
+};
+var persona2 = creaPersona("Feo", "De Verdad");
+var persona3 = creaPersona("Bruce", "Wayne");
+console.log(persona2.saluda(persona3)); // Hola Bruce Wayne
+console.log(persona2.saluda({})); // Hola colega */
+
+/***
+ *  Recorrer objetos con for in
+ * */
+
+/* for (let clave in persona) {
+  // Se obtiene el valor de la clave actual.
+  let valor = persona[clave];
+  // Se muestra en pantalla la clave junto a su valor y el tipo de datos.
+  console.log(    `La clave es "${clave}" y el valor es "${valor}" y es del tipo "${typeof persona[clave]}"`);
+} */
+
+/***
+ *  Encadenamiento opcional (React)
+ * */
+
+//console.log(persona?.direccion);
+//console.log(persona.direccion?.calle);
+
+/************************************************************************************************
+ * DESESTRUCTURACIÓN
+ ***********************************************************************************************/
+
+/*** Acceso rápido al contenido de un objeto. */
+
+let { nombre, apellido1, aficiones } = persona;
+
+//console.log(`El nombre de persona es ${nombre} ${apellido1} y tiene estas aficiones ${aficiones}`);
+
+/*** Uso de alias para el nombre de las variables desestructuradas. */
+
+let { nombre: nom, apellido1: ape1, aficiones: afi } = persona;
+
+//console.log(`El nombre de persona es ${nom} ${ape1} y tiene estas aficiones ${afi}`);
+
+/*** También funciona en Arrays, pero de forma posicional. */
+
+let [primerFeo, segundoFeo, tercerFeo, cuartoFeo] = feos;
+
+//console.log(`Estos son los feos: ${primerFeo}, ${segundoFeo}, ${tercerFeo} y ${cuartoFeo}`);
+
+/************************************************************************************************
+ * OPERADOR SPREAD (desparramar) CON OBJETOS
+ ************************************************************************************************/
+
+/***
+ *  ¡¡CUIDADO!! -> Shallow copy (copia superficial sólo comparten la referencia).
+ *  Ocurre em cualquier objeto iterable.
+ * */
+
+const copiaPersona = { ...persona };
+
+/* console.log(copiaPersona); // Copia de persona.
+console.log(persona === copiaPersona); // false (diferentes referencias) */
+
+/***
+ * Combinar objetos.
+ * */
+
+const datosExtra = { pelo: "Escaso" };
+const personaExtra = { ...persona, ...datosExtra };
+
+/* console.log(personaExtra); */
