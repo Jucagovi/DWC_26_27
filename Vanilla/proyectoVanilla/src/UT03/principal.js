@@ -372,23 +372,42 @@ console.log(persona2.saluda({})); // Hola colega */
  * DESESTRUCTURACIÓN
  ***********************************************************************************************/
 
-/*** Acceso rápido al contenido de un objeto. */
+/***
+ *  Acceso rápido al contenido de un objeto. 
+ * */
 
 let { nombre, apellido1, aficiones } = persona;
 
 //console.log(`El nombre de persona es ${nombre} ${apellido1} y tiene estas aficiones ${aficiones}`);
 
-/*** Uso de alias para el nombre de las variables desestructuradas. */
+/***
+ *  Uso de alias para el nombre y valores por defecto de las variables desestructuradas. 
+ * */
 
-let { nombre: nom, apellido1: ape1, aficiones: afi } = persona;
+let {
+  nombre: nom,
+  apellido1: ape1,
+  aficiones: afi,
+  apodo = "Ninguno",
+} = persona;
 
-//console.log(`El nombre de persona es ${nom} ${ape1} y tiene estas aficiones ${afi}`);
+//console.log(`El nombre de persona es ${nom} ${ape1} (con el apodo ${apodo}) y tiene estas aficiones ${afi}`);
 
-/*** También funciona en Arrays, pero de forma posicional. */
+/***
+ *  También funciona en Arrays, pero de forma posicional. 
+ * */
 
 let [primerFeo, segundoFeo, tercerFeo, cuartoFeo] = feos;
 
 //console.log(`Estos son los feos: ${primerFeo}, ${segundoFeo}, ${tercerFeo} y ${cuartoFeo}`);
+
+/***
+ *  Opciones por defecto también aquí. 
+ * */
+
+
+
+
 
 /************************************************************************************************
  * OPERADOR SPREAD (desparramar) CON OBJETOS
