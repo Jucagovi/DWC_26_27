@@ -68,3 +68,10 @@ listadoCompleto(sinStock(dispositivos));
 
 //listadoNombre(enStock(dispositivos));
 
+let nuevoPortatil = { ...dispositivos[0], precio: 599.0, propietario: "feo" };
+nuevoPortatil = {
+  ...nuevoPortatil,
+  especificaciones: { ...nuevoPortatil.especificaciones, ram: "64GB" },
+};
+console.log(dispositivos[0]);
+console.log(nuevoPortatil);
