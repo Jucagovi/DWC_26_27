@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import ValorEstado from "../../tools/ValorEstado";
 
-function StateContador() {
+const StateContador = () => {
   // Se crea el estado del componente.
   let [contador, setContador] = useState(0);
   /* Funciones asociadas al estado.
@@ -8,19 +9,19 @@ function StateContador() {
    *    Si forman parte del núcleo del componente se declaran en el componente.
    */
   const incremento = () => {
-    let contadorNuevo = contador + 1;
-    setContador(contadorNuevo); // Una sola actualización por ámbito.
+    setContador(contador + 1); // Una sola actualización por ámbito.
     //contador++; // No hay redibujado ya que no se está utilizando la función setContador.
     console.log(contador);
   };
   const decremento = () => {
-    setContador(contador - 1);
+    contador > 0 ? setContador(contador - 1) : 0;
     //contador--;
     console.log(contador);
   };
 
   const reiniciar = (numero) => {
     setContador(numero);
+    console.log(contador);
   };
 
   // Se crea el código JSX.
@@ -30,7 +31,11 @@ function StateContador() {
         <h1>Mi primer contador en React</h1>
         {/* Se muestra el estado del componente. */}
         <h1>{contador}</h1>
-        {/*¿Y si quiero que su valor se muestre siempre si es positivo? */}
+        <h2>
+          <ValorEstado estado={contador} />
+        </h2>
+        {/*¿Y si quiero que su valor se muestre siempre si es positivo?
+          -> Se comprueba el valor en la función "decremento". */}
         <p>
           {/* Se asignan los eventos a los botones. */}
           <button
@@ -40,13 +45,27 @@ function StateContador() {
           >
             Incrementar
           </button>
-          <button onClick={decremento}>Decrementar</button>
-          {/*¿Y si quiero reiniciar el contador? */}
+          <button
+            onClick={() => {
+              decremento();
+            }}
+          >
+            Decrementar
+          </button>
+          <button
+            onClick={() => {
+              reiniciar(0);
+            }}
+          >
+            Reiniciar
+          </button>
+          {/*¿Y si quiero reiniciar el contador? 
+            -> Se crea una función específica para ello.*/}
         </p>
       </div>
     </>
   );
-}
+};
 /* *************************************************************************
  *   La función setContador es una función asíncrona por ese motivo no tiene
  *   un comportamiento síncrono (el valor de contador no coincide).

@@ -7,7 +7,7 @@ import {
 import ValorEstado from "../../tools/ValorEstado.jsx";
 import ElementoListado from "./ElementoListado.jsx";
 
-function StateObjetos() {
+const StateObjetos = () => {
   // Si se trabaja con objetos es buena idea tener un "reinicio".
   const estadoInicial = [];
   // Se crea el componente con el estado inicial de valores.
@@ -16,7 +16,7 @@ function StateObjetos() {
   const addObjeto = () => {
     // Se genera el objeto con el nombre de forma aleatoria.
     let objeto = {
-      nombre: generarNombreAleatorio(),
+      nombre: `${generarNombreAleatorio()}`,
       apellidos: `${generarApellidosAleatorio()} ${generarApellidosAleatorio()}`,
     };
     setPrueba([...prueba, objeto]);
@@ -33,18 +33,20 @@ function StateObjetos() {
       </button>
       <div className='StateObjetos-listado'>
         {/* Imprimir el estado (Objeto) para comprobar su comportamiento.*/}
-        {prueba.map((valor, indice) => {
-          return (
-            <p>
-        {valor.apellidos}, {valor.nombre}
-      </p>
-            // ¿No se están haciendo demasiadas cosas?
-            // ¿No se deberían comprobar los datos antes de recorrerlos?
-          );
-        })}
+        {Array.isArray(prueba) && prueba.length > 0
+          ? prueba.map((valor, indice) => {
+              return (
+                <ElementoListado key={indice} datos={valor} />
+                // ¿No se están haciendo demasiadas cosas?
+                //    -> Sí, hay que crear componentes nuevos.
+                // ¿No se deberían comprobar los datos antes de recorrerlos?
+                //    -> Siempre hay que comprobar si es un array y si tiene valores antes de hacer el map.
+              );
+            })
+          : "No hay datos, tonto."}
       </div>
     </>
   );
-}
+};
 
 export default StateObjetos;

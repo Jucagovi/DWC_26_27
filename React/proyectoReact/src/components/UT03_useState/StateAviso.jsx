@@ -21,10 +21,10 @@ const StateAviso = () => {
         {/* Se asigna un evento al botón para cambiar el estado. */}
         <button
           onClick={() => {
-            setCondicion(!condicion);
+            //setCondicion(!condicion);
             // Pero siempre es mejor utilizar una función para tener el código ordenado
             // y que todas las referencias al estado estén en la parte de JavaScript.
-            //cambiar();
+            cambiar();
           }}
         >
           Cambiar condición

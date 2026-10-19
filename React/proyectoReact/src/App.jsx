@@ -14,6 +14,8 @@ function App() {
     <>
       <div id='center'>
         <h2>UT03 El hook useState</h2>
+        {/* <StateAviso />
+        <StateContador /> */}
         <StateObjetos />
       </div>
     </>

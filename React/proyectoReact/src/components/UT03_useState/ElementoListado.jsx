@@ -1,10 +1,13 @@
 import React from "react";
 
 const ElementoListado = (props) => {
+  const { nombre, apellidos, calle } = props.datos;
+
+
   return (
     <>
       <p>
-        {props.apellidos}, {props.nombre}
+        {apellidos}, {nombre}
       </p>
     </>
   );

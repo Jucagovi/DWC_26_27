@@ -3,7 +3,7 @@ import { generarVerduraAleatorio } from "../../libraries/funciones.js";
 import "./StateVerduras.css";
 import ValorEstado from "../../tools/ValorEstado.jsx";
 
-function StateVerduras() {
+const StateVerduras = () => {
   const valorInicial = ["Apio", "Calabacín", "Pimiento", "Calabaza", "Cebolla"];
 
   const [verduras, setVerduras] = useState(valorInicial);
@@ -107,6 +107,6 @@ function StateVerduras() {
       </div>
     </>
   );
-}
+};
 
 export default StateVerduras;
