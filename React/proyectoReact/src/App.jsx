@@ -1,31 +1,21 @@
 import React from "react";
 import "./App.css";
-import MiComponente from "./components/UT02/MiComponente.jsx";
-import ComponenteFeo from "./components/UT02/ComponenteFeo.jsx";
-import Interprete from "./components/UT02/Practica203/Interprete.jsx";
-import Contenedor from "./components/UT02/Practica203/Contenedor.jsx";
+import MiComponente from "./components/UT02_Componentes/MiComponente.jsx";
+import ComponenteFeo from "./components/UT02_Componentes/ComponenteFeo.jsx";
+import Interprete from "./components/UT02_Componentes/Practica203/Interprete.jsx";
+import Contenedor from "./components/UT02_Componentes/Practica203/Contenedor.jsx";
+import StateAviso from "./components/UT03_useState/StateAviso.jsx";
+import StateContador from "./components/UT03_useState/StateContador.jsx";
+import StateObjetos from "./components/UT03_useState/StateObjetos.jsx";
+import StateVerduras from "./components/UT03_useState/StateVerduras.jsx";
 
 function App() {
   return (
     <>
-      <section id='center'>
-        <h2>¡Hola, React!</h2>
-        <Contenedor>
-          Hola, soy el children de contenedor.
-          <Interprete
-            nombre='Feo Horrible'
-            imagen='https://images.uncyclomedia.co/inciclopedia/es/thumb/6/63/Feo.png/225px-Feo.png'
-          >
-            Esta es una biografía muy fea de un tipo muy feo.
-          </Interprete>
-          <Interprete
-            nombre='Fea de veredad'
-            imagen='https://images.uncyclomedia.co/inciclopedia/es/thumb/6/63/Feo.png/225px-Feo.png'
-          >
-            Esta es la biografía muy fea pasada a través de <i>children</i>.
-          </Interprete>
-        </Contenedor>
-      </section>
+      <div id='center'>
+        <h2>UT03 El hook useState</h2>
+        <StateObjetos />
+      </div>
     </>
   );
 }
