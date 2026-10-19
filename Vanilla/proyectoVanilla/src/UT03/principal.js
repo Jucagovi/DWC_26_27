@@ -207,7 +207,9 @@ const sumarBien = (texto, ...numeros) => {
   return `${texto}: ${resultado}`;
 };
 
-/* console.log(sumarBien("El resultat és", 3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3)); */
+/* console.log(sumarBien("El resuconsole.log(
+  `El nombre de persona es ${nom} ${ape1} (con el apodo ${apodo}) y tiene estas aficiones ${afi}`,
+);ltat és", 3, 4, 5, 7, 5, 3, 6, 8, 5, 9, 3)); */
 
 let numero = 45.6;
 /* console.log(numero);
@@ -230,7 +232,7 @@ Es el contenedor de todas la variables globales y funciones declarativas (las qu
 
 // confirm -> Confirmar una acción.
 /* if (confirm("¿Quieres saludar al usuario?")) {
-  console.log("¡Hola usuario!");
+  console.log("¡Hola, usuario!");
 } else {
   console.log("Pues no te saludo.");
 } */
@@ -246,23 +248,22 @@ let feo = "Soy un parámetro en tercera posición.";
 /* const idTimeout = setTimeout(
   () => {
     console.log("Espero dos segundos y ejecuto el código...");
-    window.alert(feo); // ¡¡¡No usar nunca!!!
+    console.log(feo); // ¡¡¡No usar nunca!!!
   },
   2000,
-  feo
+  feo,
 ); */
 
+/* function feo(saludo) {
+  console.log(`Te saludo con un  ${saludo}`);
+};
 let a = 5;
 // setInterval -> repite una acción.
 // Esta función callback no recibe parámetros (se pasan a partir del tercer parámetro).
-/* const idIntervalo = setInterval(
-  () => {
-    console.log(Date.now());
-    console.log(feo);
-  },
-  1000,
-  feo
-); */
+const idIntervalo = setInterval(() => {
+  feo("Horrible");
+}, 1000); */
+
 
 // clearInterval/clearTimeout -> detener un intervalo.
 /* const idParada = setTimeout(() => {
@@ -310,10 +311,10 @@ console.log(persona); */
  *  Definición de objetos ("métodos")
  * */
 
-/* persona.getNombreCompleto = function () {
+persona.getNombreCompleto = function () {
   // Necesito una función anónima para usar this (no vale una función flecha).
   return `${this.nombre} ${this.apellido1}`;
-}; */
+};
 
 /* console.log(persona);
 console.log(persona.getNombreCompleto); // Imprimo por consola el objeto función.
@@ -323,7 +324,7 @@ console.log(persona.getNombreCompleto()); // Ejecuto la función e imprimo lo qu
  * Las funciones pueden devolver objetos JSON.
  */
 
-/* const creaPersona = (nom, ape1) => {
+/* const creaPersona = (nom = "Sin nombre", ape1 = "Sin apellidos") => {
   return {
     nombre: nom,
     apellido1: ape1,
@@ -358,15 +359,17 @@ console.log(persona2.saluda({})); // Hola colega */
   // Se obtiene el valor de la clave actual.
   let valor = persona[clave];
   // Se muestra en pantalla la clave junto a su valor y el tipo de datos.
-  console.log(    `La clave es "${clave}" y el valor es "${valor}" y es del tipo "${typeof persona[clave]}"`);
+  console.log(
+    `La clave es "${clave}" y el valor es "${valor}" y es del tipo "${typeof persona[clave]}"`,
+  );
 } */
 
 /***
  *  Encadenamiento opcional (React)
  * */
 
-//console.log(persona?.direccion);
-//console.log(persona.direccion?.calle);
+/* console.log(persona?.direccion);
+console.log(persona.direccion?.calle); */
 
 /************************************************************************************************
  * DESESTRUCTURACIÓN
@@ -391,7 +394,9 @@ let {
   apodo = "Ninguno",
 } = persona;
 
-//console.log(`El nombre de persona es ${nom} ${ape1} (con el apodo ${apodo}) y tiene estas aficiones ${afi}`);
+console.log(
+  `El nombre de persona es ${nom} ${ape1} (con el apodo ${apodo}) y tiene estas aficiones ${afi}`,
+);
 
 /***
  *  También funciona en Arrays, pero de forma posicional. 
@@ -399,7 +404,10 @@ let {
 
 let [primerFeo, segundoFeo, tercerFeo, cuartoFeo] = feos;
 
-//console.log(`Estos son los feos: ${primerFeo}, ${segundoFeo}, ${tercerFeo} y ${cuartoFeo}`);
+
+console.log(
+  `Estos son los feos: ${primerFeo}, ${segundoFeo}, ${tercerFeo} y ${cuartoFeo}`,
+);
 
 /***
  *  Opciones por defecto también aquí. 
@@ -415,7 +423,7 @@ let [primerFeo, segundoFeo, tercerFeo, cuartoFeo] = feos;
 
 /***
  *  ¡¡CUIDADO!! -> Shallow copy (copia superficial sólo comparten la referencia).
- *  Ocurre em cualquier objeto iterable.
+ *  Ocurre en cualquier objeto iterable.
  * */
 
 const copiaPersona = { ...persona };
