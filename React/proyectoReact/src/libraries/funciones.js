@@ -59,6 +59,8 @@ const generarVerduraAleatorio = () => {
     "Verdolagas",
     "Tomate",
     "Zanahoria",
+    "Nabo",
+    "Pimiento",
   ];
 
   // Devolver una verdura aleatoria
