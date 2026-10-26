@@ -12,6 +12,13 @@ const Verduras = () => {
 
   // Funciones para modificar el estado.
 
+  const descatalogarProducto = (idEliminar) => {
+    const listaActualizada = productos.filter((p) => {
+      return p.id !== idEliminar;
+    });
+    setProductos([...listaActualizada]);
+  };
+
   const limpiar = () => {
     setListado([]);
   };
