@@ -24,10 +24,10 @@
  *  Posicionamiento relativo firstChild, lastChild, nextSibling, previousSibling.
  * */
 
-/* const parrafo = document.body.firstChild;
+const parrafo = document.body.firstChild;
 const parrafo2 = document.body.firstElementChild;
 console.log(parrafo);
-console.log(parrafo2); */
+console.log(parrafo2);
 
 /***********************************************
  *  Tipos de nodo Element (1), Attr (2) y Text (3).
@@ -80,14 +80,14 @@ console.log(inputs); */
   console.log(i);
 }); */
 
-/* const capa_botones = document.querySelector("#botones");
+const capa_botones = document.querySelector("#botones");
 console.log(capa_botones);
 
 const capas = document.querySelectorAll("div div");
 console.log(capas);
 
 const capas2 = document.querySelectorAll(".contenido");
-console.log(capas2); */
+console.log(capas2);
 
 /***********************************************
  *  ¡¡¡ATENCIÓN!!!
@@ -134,7 +134,7 @@ const pintarAzul = () => {
  * */
 
 const primero = document.getElementById("primero");
-//primero.classList.add("verde");
+primero.classList.add("verde");
 
 const destacarTexto = () => {
   const nuevos = document.getElementsByClassName("nuevo");
@@ -179,13 +179,22 @@ const crearConCE = () => {
  * */
 
 const crearConIH = () => {
-  // 1.- Se crea el elemento,
+  /*  // 1.- Se crea el elemento,
   var elemento2 = document.createElement("p");
   // 2.- Se crea el texto (contenido),
   elemento2.innerHTML =
     "Nuevo párrafo creado dinámicamente con <strong class='nuevo'>innerHTML</strong>";
   // 3.- Se añade al DOM -> appendChild(nuevo), insertBefore(nuevo,existente),  removeChild(existente), replaceChild(nuevo,existente).
-  document.getElementById("botones").appendChild(elemento2);
+  document.getElementById("botones").appendChild(elemento2); */
+  const listadoParrafos = document.getElementsByTagName("p");
+  //console.log(listadoParrafos);
+  const destino = document.getElementById("tonteria"); // Referencia estática.
+  for (let i = 0; i < listadoParrafos.length; i++) {
+    listadoParrafos[i].classList.add("destacado");
+    //destino.insertAdjacentHTML("beforeend", listadoParrafos[i].outerHTML); // Crear elementos nuevos.
+    destino.appendChild(listadoParrafos[i]); // Mueve los elementos del document.
+  }
+  //destino.insertAdjacentHTML("beforeend", listadoParrafos);
 };
 
 /***********************************************
