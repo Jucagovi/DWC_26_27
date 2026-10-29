@@ -42,7 +42,7 @@ console.log(parrafo2.nodeName); */
  *  Seleccionando elementos (recursivamente):
  *    --> getElementsByTagName,
  *    --> getElementById,
- *    --> getElementsByName y
+ *    --> getElementsByName y (está obsoleto y no se suele utilizar)
  *    --> getElementByClassName.
  * */
 
@@ -99,7 +99,7 @@ console.log(capas2); */
 /***********************************************
  * Acceso y modificacción de atributos ->
  *    -> getAttribute(nombre),
- *    ->setAttribute(nombre, valor) o como propiedades de elementos.
+ *    -> setAttribute(nombre, valor) o como propiedades de elementos.
  * */
 
 const alinearDerecha = () => {
