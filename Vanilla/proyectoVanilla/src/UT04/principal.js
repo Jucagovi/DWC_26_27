@@ -149,6 +149,13 @@ const destacarTexto = () => {
  *    --> document.createElement,
  *    --> y document.createTextNode.
  *
+ * Los métodos para añadir contenidos son:
+ *    --> appendChild(nuevoElemento), el nuevo nodo se incluye inmediatamente después de los hijos ya existentes (si hay alguno),
+ *    --> insertBefore(nuevoElemento, elementoExistente), permiten elegir un nodo existente del documento e incluir otro antes que él,
+ *    --> replaceChild(nuevoElemento, elementoExistente), reemplazar un nodo por otro,
+ *    --> removeChild(nodoABorrar), elimina un nodo,
+ *    --> cloneNode(), permite clonar un nodo.
+ *
  * Se realiza en dos acciones:
  *    --> cear el elemento a introducir (con su contenido y propiedades),
  *    --> insertar el elemento en el DOM.
