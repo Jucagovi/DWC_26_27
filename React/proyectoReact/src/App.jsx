@@ -18,8 +18,8 @@ function App() {
     <>
       <div id='center'>
         <h2>UT04 Manejo del DOM en React</h2>
-        <Referencias />
-        {/* <ListadoMal /> */}
+        {/* <Referencias /> */}
+        <ListadoMal />
       </div>
     </>
   );

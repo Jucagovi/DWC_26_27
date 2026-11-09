@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Referencias.css";
-import BotonLimpiar from "./BotonLimpiar";
+import BotonLimpiar from "./BotonLimpiar.jsx";
 
 const Referencias = () => {
   // Referencias a elementos del VirtualDOM.

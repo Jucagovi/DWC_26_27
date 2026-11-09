@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const ListadoMal = () => {
   /*****************************************
    * En la parte de Javascript se crea una referencia a un componente del Virtual DOM.
    ******************************************/
   const listadoRef = useRef(null);
+  const [elementos, setElementos] = useState([`Este es el elemento inicial.`]);
 
   const anadirElementoInner = (referencia) => {
     // 1.- Se añade el código en innerHTML a través de su referencia.
@@ -22,9 +23,14 @@ const ListadoMal = () => {
     referencia.current.appendChild(li);
   };
 
+  const crearElemento = () => {
+    setElementos([...elementos, `Este es un nuevo elemento.`]);
+  };
+
   const borrarListado = (referencia) => {
     // Se cambia el valor del contenido del listado a cadena vacía (se borra).
-    referencia.current.innerHTML = "";
+    //referencia.current.innerHTML = "";
+    setElementos([]);
   };
 
   return (
@@ -34,7 +40,7 @@ const ListadoMal = () => {
         <p>
           <button
             onClick={() => {
-              anadirElementoInner(listadoRef);
+              crearElemento();
             }}
           >
             Añadir elemento con innerHTML
@@ -55,7 +61,11 @@ const ListadoMal = () => {
           </button>
         </p>
         <ul ref={listadoRef}>
-          <li>Este es el elemento inicial.</li>
+          {Array.isArray(elementos) && elementos.length
+            ? elementos.map((elemento, indice) => {
+                return <li key={indice}>{elemento}</li>;
+              })
+            : `No hay elementos.`}
         </ul>
       </div>
     </>
