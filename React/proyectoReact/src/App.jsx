@@ -12,6 +12,7 @@ import Verduras from "./components/UT03_useState/Verduras.jsx";
 import ContadorFeo from "./components/UT03_useState/ContadorFeo.jsx";
 import ListadoMal from "./components/UT04_useRef/ListadoMal.jsx";
 import Referencias from "./components/UT04_useRef/Referencias.jsx";
+import ListadoBien from "./components/UT04_useRef/ListadoBien.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <h2>UT04 Manejo del DOM en React</h2>
         {/* <Referencias /> */}
         <ListadoMal />
+        <ListadoBien />
       </div>
     </>
   );
