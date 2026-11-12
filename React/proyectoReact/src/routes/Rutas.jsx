@@ -32,6 +32,8 @@ const Rutas = () => {
       <Routes>
         <Route path='/' element={<Inicio />} />
         <Route path='/contacto' element={<Contacto />} />
+        <Route path='/acercade' element={<AcercaDe />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </>
   );

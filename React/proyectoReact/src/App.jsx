@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
 import MiComponente from "./components/UT02_componentes/MiComponente.jsx";
 import ComponenteFeo from "./components/UT02_componentes/ComponenteFeo.jsx";
 import Interprete from "./components/UT02_componentes/Practica203/Interprete.jsx";
@@ -16,6 +17,12 @@ import ContadorFeo from "./components/UT03_useState/ContadorFeo.jsx";
 import ListadoMal from "./components/UT04_useRef/ListadoMal.jsx";
 import Referencias from "./components/UT04_useRef/Referencias.jsx";
 import ListadoBien from "./components/UT04_useRef/ListadoBien.jsx";
+import Inicio from "./pages/Inicio.jsx";
+import Contacto from "./pages/Contacto.jsx";
+import AcercaDe from "./pages/AcercaDe.jsx";
+import Menu from "./components/menu/Menu.jsx";
+import Error from "./pages/Error.jsx";
+import Rutas from "./routes/Rutas.jsx";
 
 /**
  *
@@ -46,7 +53,7 @@ function App() {
       <Contenedor>
         <Cabecera />
         <Principal>
-          <h3>Este es el contenido principal</h3>
+          <Rutas />
         </Principal>
         <Pie />
       </Contenedor>

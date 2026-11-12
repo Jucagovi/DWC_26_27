@@ -12,6 +12,9 @@ const Menu = () => {
         <Link to='/contacto' className='menu-elemento'>
           Contacto
         </Link>
+        <Link to='/acercade' className='menu-elemento'>
+          Acerca De...
+        </Link>
       </nav>
     </>
   );
