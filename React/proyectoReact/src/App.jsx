@@ -1,9 +1,12 @@
 import React from "react";
 import "./App.css";
-import MiComponente from "./components/UT02_Componentes/MiComponente.jsx";
-import ComponenteFeo from "./components/UT02_Componentes/ComponenteFeo.jsx";
-import Interprete from "./components/UT02_Componentes/Practica203/Interprete.jsx";
-import Contenedor from "./components/UT02_Componentes/Practica203/Contenedor.jsx";
+import MiComponente from "./components/UT02_componentes/MiComponente.jsx";
+import ComponenteFeo from "./components/UT02_componentes/ComponenteFeo.jsx";
+import Interprete from "./components/UT02_componentes/Practica203/Interprete.jsx";
+import Contenedor from "./components/estructura/Contenedor.jsx";
+import Cabecera from "./components/estructura/Cabecera.jsx";
+import Principal from "./components/estructura/Principal.jsx";
+import Pie from "./components/estructura/Pie.jsx";
 import StateAviso from "./components/UT03_useState/StateAviso.jsx";
 import StateContador from "./components/UT03_useState/StateContador.jsx";
 import StateObjetos from "./components/UT03_useState/StateObjetos.jsx";
@@ -14,15 +17,39 @@ import ListadoMal from "./components/UT04_useRef/ListadoMal.jsx";
 import Referencias from "./components/UT04_useRef/Referencias.jsx";
 import ListadoBien from "./components/UT04_useRef/ListadoBien.jsx";
 
+/**
+ *
+ * React debe comportarse como una SPA, por lo que hay que implementar un sistema de rutas
+ * que permitan acceder a diferentes partes de la página sin recargar.
+ *
+ * La biblioteca se instala con el comando: npm install react-router-dom.
+ *
+ * Los elementos de la biblioteca que se utilizarán serán:
+ *    <BrowserRoute>, conecta la aplicación a la URL del navegador
+ *    <Routes>, árbol de rutas que dibuja solamente un componente componente,
+ *    <Route>, una ruta en el árbol y necesita, al menos, las propiedades path y element,
+ *      rutas absolutas -> empiezan con una barra (sustituyen a la ruta existente),
+ *      rutas relativas -> no empiezan con una barra (se añaden a la ruta existente),
+ *    <Link>, sustituye a la etiqueta <a> de HTML. Recibe en su propiedad to el path de la ruta a dibujar,
+ *    useNavigate, hook que controla la API History del navegador ()redirigir al/la usuario/a a una ruta determinada) y
+ *    useLocation, hook que ofrece información de las rutas gestionadas por React-router-dom.
+ *
+ * También se pueden hacer subrutas:
+ *    <Outlet>, sirve para indicar el destino de las rutas anidadas (submenús),
+ *    useParams, hook que permite gestionar los parámetros pasados en una ruta.
+ *
+ */
+
 function App() {
   return (
     <>
-      <div id='center'>
-        <h2>UT04 Manejo del DOM en React</h2>
-        {/* <Referencias /> */}
-        <ListadoMal />
-        <ListadoBien />
-      </div>
+      <Contenedor>
+        <Cabecera />
+        <Principal>
+          <h3>Este es el contenido principal</h3>
+        </Principal>
+        <Pie />
+      </Contenedor>
     </>
   );
 }
