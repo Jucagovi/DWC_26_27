@@ -2,6 +2,16 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Inicio from "../pages/Inicio.jsx";
 import Contacto from "../pages/Contacto.jsx";
+import AcercaDe from "../pages/AcercaDe.jsx";
+import Administracion from "../pages/Administracion.jsx";
+import Error from "../pages/Error.jsx";
+import AdminDiscentes from "../pages/administracion/AdminDiscentes.jsx";
+import AdminNotas from "../pages/administracion/AdminNotas.jsx";
+import AdminUsuarios from "../pages/administracion/AdminUsuarios.jsx";
+import NotasDws from "../pages/administracion/notas/NotasDws.jsx";
+import NotasDwc from "../pages/administracion/notas/NotasDwc.jsx";
+import NotasDiw from "../pages/administracion/notas/NotasDiw.jsx";
+import DiscenteDetalle from "../pages/DiscenteDetalle.jsx";
 
 /**
  *
@@ -34,6 +44,7 @@ const Rutas = () => {
         <Route path='/contacto' element={<Contacto />} />
         <Route path='/acercade' element={<AcercaDe />} />
         <Route path='*' element={<Error />} />
+        <Route path='/administracion' element={<Administracion />} />
       </Routes>
     </>
   );

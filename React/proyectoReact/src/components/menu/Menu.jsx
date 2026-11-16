@@ -15,6 +15,9 @@ const Menu = () => {
         <Link to='/acercade' className='menu-elemento'>
           Acerca De...
         </Link>
+        <Link to='/administracion' className='menu-elemento'>
+          Administración
+        </Link>
       </nav>
     </>
   );

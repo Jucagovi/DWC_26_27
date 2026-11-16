@@ -1,7 +1,6 @@
 import React from "react";
 // Añadir media.
 import "./ComponenteFeo.css";
-import logotipo from "../../assets/react.svg";
 
 const ComponenteFeo = (props) => {
   const feo = "Muy Feo";
