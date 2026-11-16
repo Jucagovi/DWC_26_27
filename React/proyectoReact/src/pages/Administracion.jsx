@@ -9,7 +9,10 @@ const Administracion = () => {
       <h2>Panel de administración.</h2>
       <nav className='administracion-navegacion'>
         {/* Las rutas relativas también funcionan en <Link>. */}
-        <Link className='administracion-elementomenu' to='usuarios'>
+        <Link
+          className='administracion-elementomenu'
+          to='/administracion/usuarios'
+        >
           Usuarios/as
         </Link>
         <Link

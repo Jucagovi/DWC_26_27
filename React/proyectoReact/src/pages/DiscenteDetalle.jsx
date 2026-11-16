@@ -4,7 +4,7 @@ import listado from "../assets/objetos/discentes.json";
 
 const DiscenteDetalle = () => {
   // Se recoje la variable pasada por la API react-router-dom.
-  const { id } = useParams();
+  const { identificador } = useParams();
 
   /** Esta variable viaja desde la ruta:
    *
@@ -13,9 +13,8 @@ const DiscenteDetalle = () => {
    */
 
   const discenteFiltrado = listado.discentes.filter((valor) => {
-    return valor.id === parseInt(id); // ¡¡¡Ojo!!! La información se comparte en formato string.
+    return valor.id === parseInt(identificador); // ¡¡¡Ojo!!! La información se comparte en formato string.
   });
-  console.log(discenteFiltrado);
 
   // Se desestructura el resultado para mayor comodidad.
   const { nombre, apellidos, curso, modulos } = discenteFiltrado[0]; // ¡¡¡Ojo!!! (Bis). Filter siempre devuelve un array.
@@ -23,7 +22,7 @@ const DiscenteDetalle = () => {
   return (
     <>
       <div>
-        <h1>{id}</h1>
+        <h1>{identificador}</h1>
         <h2>
           {nombre} {apellidos}
         </h2>

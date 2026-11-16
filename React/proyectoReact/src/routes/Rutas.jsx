@@ -44,7 +44,22 @@ const Rutas = () => {
         <Route path='/contacto' element={<Contacto />} />
         <Route path='/acercade' element={<AcercaDe />} />
         <Route path='*' element={<Error />} />
-        <Route path='/administracion' element={<Administracion />} />
+        <Route path='/administracion' element={<Administracion />}>
+          <Route path='/administracion/usuarios' element={<AdminUsuarios />} />
+          <Route
+            path='/administracion/discentes'
+            element={<AdminDiscentes />}
+          />
+          <Route
+            path='/administracion/discentedetalle/:identificador'
+            element={<DiscenteDetalle />}
+          />
+          <Route path='/administracion/notas' element={<AdminNotas />}>
+            <Route path='/administracion/notas/DWC' element={<NotasDwc />} />
+            <Route path='/administracion/notas/DWS' element={<NotasDws />} />
+            <Route path='/administracion/notas/DIW' element={<NotasDiw />} />
+          </Route>
+        </Route>
       </Routes>
     </>
   );
