@@ -9,7 +9,7 @@ const agregarBoton = () => {
 const agregarEvento = (coleccionElementos) => {
   Array.from(coleccionElementos).forEach((elemento) => {
     elemento.addEventListener("click", (evento) => {
-      console.log(evento.target);
+      console.log("Hola, Feo.");
     });
   });
 };

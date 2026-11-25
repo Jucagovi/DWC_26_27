@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 window.onload = () => {
   const elemento = document.getElementById("feo");
   const boton = document.getElementById("boton");
+  const cuerpo = document.body;
+  console.log(cuerpo);
 
   /***********************************************
    *
@@ -83,7 +85,7 @@ window.onload = () => {
    * Funciones con parámetros a través de una función flecha.
    **********************************************/
 
-  /* feo.addEventListener(
+  /* elemento.addEventListener(
     "click",
     () => {
       saludarNombre("Feo");
@@ -100,8 +102,8 @@ window.onload = () => {
    *
    **********************************************/
 
-  /*  // Se añade el evento al <div>.
-  elemento.addEventListener("click", decirAdios);
+  // Se añade el evento al <div>.
+  /* elemento.addEventListener("click", decirAdios);
   // Se quita el evento al <div>.
   boton.addEventListener("click", () => {
     elemento.removeEventListener("click", decirAdios);
@@ -111,10 +113,11 @@ window.onload = () => {
    * El objeto event.
    **********************************************/
 
-  /* elemento.addEventListener(
+  /*  elemento.addEventListener(
     "click",
     (evento) => {
       console.log(evento);
+      console.log(evento.target.id);
     },
     false,
   ); */
@@ -129,7 +132,7 @@ window.onload = () => {
    *
    **********************************************/
 
-  /*   let c = 0;
+  let c = 0;
   let j = 0;
   // Añadir un evento a todo el documento.
   document.addEventListener(
@@ -138,15 +141,16 @@ window.onload = () => {
       c++;
       console.log(`Pulsado document ${c} veces`);
     },
-    false,
+    true,
   );
   // Jugando con la propagación de eventos.
   document.getElementById("feo").addEventListener(
     "click",
-    () => {
+    (event) => {
       j++;
       console.log(`Pulsado feo ${j} veces`);
+      console.log(event.target);
     },
     false,
-  ); */
+  );
 }; // Fin del window.onload.

@@ -21,7 +21,7 @@ window.onload = () => {
    * ¿Cómo adigno eventos a varios elementos?
    ********************************************/
 
-  // Se seleccionan los elementos.
+  /*  // Se seleccionan los elementos.
   let botones = document.getElementsByTagName("button");
   // Se agregan los eventos.
   document.getElementById("agregarEvento").addEventListener(
@@ -30,18 +30,17 @@ window.onload = () => {
       agregarEvento(botones);
     },
     false,
-  );
+  ); */
 
   /********************************************
    * Delegación de eventos al rescate.
    ********************************************/
-
-  /* document.getElementById("contenedor").addEventListener(
-    "click",
-    (evento) => {
-      if (evento.target.tagName === "BUTTON") console.log(evento.target);
-      if (evento.target.tagName === "P") console.log(evento);
-    },
-    false
-  ); */
+  document.getElementById("contenedor").addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+      console.log("Hola, Feo.");
+    }
+    if (e.target.tagName === "P") {
+      console.log("Hola párrafo, Feo.");
+    }
+  });
 }; //Fin del window.load.
